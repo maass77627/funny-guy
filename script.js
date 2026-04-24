@@ -29,7 +29,7 @@ let buttontwo = document.getElementById("answer")
  buttontwo.addEventListener("click", () => {
     console.log(joke)
   
-  ptwo.innerText = currentJoke.delivery
+  ptwo.innerText = currentJoke.delivery ? currentJoke.delivery : "No answer at this time"
 })
 
 button.addEventListener("click", () => {
@@ -42,7 +42,8 @@ let buttonthree = document.getElementById("answer-button")
 
 buttonthree.addEventListener("click", () => {
     console.log(filteredJoke.delivery)
-pfour.innerText = filteredJoke.delivery
+    pfour.innerText = ""
+pfour.innerText = filteredJoke.delivery ? filteredJoke.delivery : "No answer at this time"
 })
 
 
