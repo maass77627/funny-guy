@@ -19,3 +19,8 @@ body{
     margin-top: 100px;
     width: 100px;
 }
+
+.joke {
+    background-color: rgb(245, 243, 248);
+    width: 300px;
+}
