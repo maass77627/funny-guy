@@ -1,31 +1,35 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+fetchJoke()
 
 let button = document.getElementById("newJoke")
-button.addEventListener("click", () => {
+// button.addEventListener("click", () => {
 
-})
+// })
 
 let buttontwo = document.getElementById("answer")
 
 
 
 
-fetch('https://v2.jokeapi.dev/joke/Any?amount=30')
-.then((response) => response.json())
-.then((json) => {
+// fetch('https://v2.jokeapi.dev/joke/Any?amount=30')
+// .then((response) => response.json())
+// .then((json) => {
 
-    console.log(json)
-})
+//     console.log(json)
+// })
 
+function fetchJoke() {
 fetch('https://v2.jokeapi.dev/joke/Any?amount=1')
 .then((response) => response.json())
 .then((json) => {
      displayJoke(json)
     console.log(json)
 })
-
+}
 
 function displayJoke(joke) {
-   
+   let ptwo = document.getElementById("joke-answer")
   let p = document.getElementById("joke")
   if (joke.setup) {
   p.innerText = joke.setup
@@ -35,12 +39,24 @@ function displayJoke(joke) {
 
   buttontwo.addEventListener("click", () => {
     console.log(joke)
-  let ptwo = document.getElementById("joke-answer")
+  
   ptwo.innerText = joke.delivery
+})
+
+button.addEventListener("click", () => {
+p.innerText = ""
+ptwo.innerText = ""
+fetchJoke()
 })
 
 
 }
+
+
+
+
+
+})
 
 
 
